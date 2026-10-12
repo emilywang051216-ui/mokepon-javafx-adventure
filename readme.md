@@ -1,23 +1,88 @@
-# SWEN20003 Semester 2, 2026
-# Project 2
-# Mokepon
+# Mokepon — JavaFX Turn-Based Adventure Game
 
-## Assumptions
+A turn-based adventure game developed using **Java and JavaFX** as part of the University of Melbourne's SWEN20003 Object Oriented Software Development coursework.
 
-* Aim, Swole, Nimble, and Bunker report the points actually gained after the statistic reaches 100.
-* Stun and blindness last three of the affected Mokepon's own turns. The count decreases after that Mokepon acts, so damage already dealt earlier in the turn is left as it was.
-* Bleeding ticks once at the end of a round, after both Mokepon have acted, and lasts for two such ticks. The tick uses the attacker's current strength. Applying the same status again resets its duration.
-* If multiple overworld interactions share a tile, a Mokepon marker takes precedence. If no Mokepon marker is present, one mystery box is collected before the exit is resolved.
-* Run away, the main menu, a loss, and the exit door all leave the battle copy behind, so the persistent Mokepon returns to its base statistics. Choosing a Mokepon from the select screen starts a new overworld run.
+The project combines map exploration, turn-based combat, character attributes, skills, status effects, and item management in a graphical desktop application.
 
-## AI Statement
+## Tech Stack
 
-I used ChatGPT (OpenAI) as a supporting tool during this project. It was used to clarify parts of the project specification, discuss implementation approaches, assist with identifying and understanding bugs, and review parts of the implementation against the stated requirements.
+- **Language:** Java 25
+- **GUI:** JavaFX 25
+- **Build Tool:** Gradle
+- **Testing:** JUnit 6
+- **Concepts:** Object-Oriented Programming, Modular Design, Game State Management
 
-I used Cursor Grok 4.7, a generative AI coding assistant, while extending the Project 1 game to the Project 2 requirements. It was used to compare the specification with the existing code and to draft the overworld, the additional skills, battle items, and the related tests. I reviewed the resulting behaviour against the specification and decided which assumptions to keep.
+## Key Features
 
-All suggestions were critically reviewed before use. I made the final implementation decisions and tested the completed program to ensure that it met the project requirements.
+- **Character Selection:** Choose a Mokepon with its own attributes and abilities.
+- **Map Exploration:** Navigate an overworld with different terrain types, encounters, and interactive objects.
+- **Turn-Based Combat:** Use skills to attack opponents and manage battle outcomes.
+- **Skills and Status Effects:** Support stat boosts, stun, blindness, bleeding, and other combat effects.
+- **Items and Inventory:** Collect and use items during the adventure.
+- **Graphical Interface:** JavaFX screens for character selection, exploration, and combat.
 
-## Code References
+## Project Structure
 
-* None
+```text
+src/
+├── main/java/
+│   └── au/edu/unimelb/swen/oop/mokepon/
+│       ├── model/    # Game rules and domain logic
+│       ├── ui/       # JavaFX interface components
+│       └── Main.java
+└── test/java/        # JUnit tests
+
+assets/                # Game images and visual resources
+mokepon.game           # Game data
+build.gradle.kts       # Gradle build configuration
+```
+
+## Getting Started
+
+**Requirements:** JDK 25
+
+On macOS or Linux:
+
+```bash
+./gradlew run
+```
+
+On Windows:
+
+```powershell
+.\gradlew.bat run
+```
+
+Run automated tests:
+
+```bash
+./gradlew test
+```
+
+## Testing
+
+JUnit tests are included to check core game rules, including combat behaviour, attribute changes, and item interactions.
+
+## Development Notes
+
+This project was developed for SWEN20003 at the University of Melbourne.
+
+Generative AI tools, including ChatGPT and Cursor, were used to discuss implementation approaches, assist with debugging, and draft parts of the implementation and tests. AI-generated suggestions were reviewed against the project requirements.
+
+## Asset Credits
+
+- [Openmon monster sprites](https://screensmith.itch.io/openmon-monster-sprites-set-5)
+- [Fantasy GUI assets](https://opengameart.org/content/fantasy-gui-0)
+- [Scroll UI container](https://opengameart.org/content/scroll-ui-container)
+- [Grenze Gotisch font](https://www.omnibus-type.com/fonts/grenze-gotisch/)
+
+Mokepon names and statistics include AI-generated content.
+
+## Academic Integrity
+
+This is a university coursework project. Source code should remain private unless public distribution is permitted by the course's academic integrity requirements.
+
+## Author
+
+Yiqing Wang
+The University of Melbourne
